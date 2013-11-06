@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>NumberOfMonthsBack</key>
+		<integer>4</integer>
+		<key>Title</key>
+		<string>January:  Green New Year</string>
+		<key>DateGoodFor</key>
+		<date>2013-01-01T07:00:00Z</date>
+		<key>Description</key>
+		<string>Have a Green New Year!  Pledge to make positive changes this month that will reduce your carbon footprint all year long. </string>
+		<key>New item</key>
+		<array>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Volunteer on MLK Day of Service</string>
+				<key>ChallengeNumber</key>
+				<integer>1</integer>
+				<key>ChallengePoints</key>
+				<integer>30</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Hard</string>
+				<key>ChallengeFrequency</key>
+				<string> One Time - Celebrate the MLD Day of Service by volunteering at a local environmental organization.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Participate in Meatless Monday</string>
+				<key>ChallengeNumber</key>
+				<integer>2</integer>
+				<key>ChallengePoints</key>
+				<integer>20</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Moderate</string>
+				<key>ChallengeFrequency</key>
+				<string>Repeat - Participate in Meatless Monday.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Walk More!  Weigh Less.</string>
+				<key>ChallengeNumber</key>
+				<integer>3</integer>
+				<key>ChallengePoints</key>
+				<integer>10</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Easy</string>
+				<key>ChallengeFrequency</key>
+				<string>Daily - Walk!   For fun or to get where you need to go. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>NumberOfMonthsBack</key>
+		<integer>3</integer>
+		<key>Title</key>
+		<string>February:  Reusable Thinking</string>
+		<key>DateGoodFor</key>
+		<date>2013-02-01T07:00:00Z</date>
+		<key>Description</key>
+		<string>It&apos;s all well and good to recycle, but the biggest difference people can make is to reduce thenumber of items sent to the landfill. </string>
+		<key>New item</key>
+		<array>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Fun with Upcycling</string>
+				<key>ChallengeNumber</key>
+				<integer>1</integer>
+				<key>ChallengePoints</key>
+				<integer>30</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Hard</string>
+				<key>ChallengeFrequency</key>
+				<string>One Time - Host an upcycling party!  Make rugs and craft items out of materials headed to the landfill.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Bring your own bag</string>
+				<key>ChallengeNumber</key>
+				<integer>2</integer>
+				<key>ChallengePoints</key>
+				<integer>20</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Moderate</string>
+				<key>ChallengeFrequency</key>
+				<string>Repeat - Bring your own shoppng bag when you go to the grocery store. </string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Your coffee, your mug</string>
+				<key>ChallengeNumber</key>
+				<integer>3</integer>
+				<key>ChallengePoints</key>
+				<integer>10</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Easy</string>
+				<key>ChallengeFrequency</key>
+				<string>Daily - Your coffee, your mug.  Use mugs and water bottles to reduce waste. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>NumberOfMonthsBack</key>
+		<integer>2</integer>
+		<key>Title</key>
+		<string>March:  Green Products</string>
+		<key>DateGoodFor</key>
+		<date>2013-03-01T07:00:00Z</date>
+		<key>Description</key>
+		<string>In our consumer culture, we are faced with millions of products to choose from every dat.  Use your &quot;power of the purse&quot; to support products that havea  lower environmental impact than their traditional counter parts. </string>
+		<key>New item</key>
+		<array>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Offset travel with carbon credits</string>
+				<key>ChallengeNumber</key>
+				<integer>1</integer>
+				<key>ChallengePoints</key>
+				<integer>0</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Hard</string>
+				<key>ChallengeFrequency</key>
+				<string>One Time - Offset travel by purchasing credits through the U&apos;s Wind Power Purchase program.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Purchase 100% recycled paper</string>
+				<key>ChallengeNumber</key>
+				<integer>2</integer>
+				<key>ChallengePoints</key>
+				<integer>0</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Moderate</string>
+				<key>New item</key>
+				<string>Repeat - Purchase only 100% recycled paper for use in printers, copiers, and fax machines</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Make and use your own green cleaner</string>
+				<key>ChallengeNumber</key>
+				<integer>3</integer>
+				<key>ChallengePoints</key>
+				<integer>0</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Easy</string>
+				<key>ChallengeFrequency</key>
+				<string>Daily - Make and use your own green cleaner. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>NumberOfMonthsBack</key>
+		<integer>1</integer>
+		<key>Title</key>
+		<string>April:  Earth Day -- Enjoy the Trees</string>
+		<key>DateGoodFor</key>
+		<date>2013-04-01T06:00:00Z</date>
+		<key>Description</key>
+		<string>In 1970, 20 million Americans participated in the very first Earth Day, and their combined voices let to the creation of the Environmental Protection Agency later that same year. </string>
+		<key>New item</key>
+		<array>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Plan a picnic</string>
+				<key>ChallengeNumber</key>
+				<integer>1</integer>
+				<key>ChallengePoints</key>
+				<integer>20</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Moderate</string>
+				<key>ChallengeFrequency</key>
+				<string>Repeat - Plan a picnic at one of Salt Lake City&apos;s 100+ parks.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Get rooted with Arbor Day</string>
+				<key>ChallengeNumber</key>
+				<integer>2</integer>
+				<key>ChallengePoints</key>
+				<integer>30</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Hard</string>
+				<key>ChallengeFrequency</key>
+				<string>One Time - Get rooted with Arbor Day by visiting Red Butte Garden. </string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Participate in the 44th Earth Day (2014 release)</string>
+				<key>ChallengeNumber</key>
+				<integer>3</integer>
+				<key>ChallengePoints</key>
+				<integer>20</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Moderate</string>
+				<key>ChallengeFrequency</key>
+				<string>Repeat - Participate in Earth Day events in your city or at your local university.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>NumberOfMonthsBack</key>
+		<integer>0</integer>
+		<key>Title</key>
+		<string>May:  Water</string>
+		<key>DateGoodFor</key>
+		<date>2013-05-01T06:00:00Z</date>
+		<key>Description</key>
+		<string>Water is a precious resource in the arid West, and Salt Lake City is no different.  Our changing climate will make water scarcity a more serious issue, with some experts predicting a runoff decrease of at least 10%.</string>
+		<key>New item</key>
+		<array>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Participate in Water Week</string>
+				<key>ChallengeNumber</key>
+				<integer>1</integer>
+				<key>ChallengePoints</key>
+				<integer>30</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Hard</string>
+				<key>ChallengeFrequency</key>
+				<string>One Time - Participate in Salt Lake City&apos;s Water Week activities.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Use your sprinklers wisely</string>
+				<key>ChallengeNumber</key>
+				<integer>2</integer>
+				<key>ChallengePoints</key>
+				<integer>20</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Moderate</string>
+				<key>ChallengeFrequency</key>
+				<string>Repeat - Run your sprinklers after sunset or before sunrise, only once every three days.</string>
+			</dict>
+			<dict>
+				<key>ChallengeTease</key>
+				<string>Turn off the tap</string>
+				<key>ChallengeNumber</key>
+				<integer>3</integer>
+				<key>ChallengePoints</key>
+				<integer>10</integer>
+				<key>ChallengeDifficulty</key>
+				<string>Easy</string>
+				<key>ChallengeFrequency</key>
+				<string>Daily - Turn off the tap!  Don&apos;t leave wat er running when you are not actively usiing it. </string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

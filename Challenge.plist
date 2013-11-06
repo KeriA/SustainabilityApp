@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ChallengeKey</key>
+		<integer>0</integer>
+		<key>ChallengeDate</key>
+		<date>2013-01-01T07:00:00Z</date>
+		<key>TopicKey</key>
+		<integer>0</integer>
+		<key>Teaser</key>
+		<string>This is challenge 1 for January 2013</string>
+		<key>ChallengeNumber</key>
+		<integer>1</integer>
+		<key>Difficulty</key>
+		<string>0</string>
+		<key>Impact</key>
+		<string>High</string>
+		<key>Points</key>
+		<integer>0</integer>
+		<key>Frequency</key>
+		<string>Weekly</string>
+	</dict>
+	<dict>
+		<key>ChallengeKey</key>
+		<integer>1</integer>
+		<key>ChallengeDate</key>
+		<date>2013-01-01T07:00:00Z</date>
+		<key>TopicKey</key>
+		<integer>1</integer>
+		<key>Description</key>
+		<string>This is challenge 2 for January 2013</string>
+		<key>ChallengeNumber</key>
+		<integer>2</integer>
+		<key>Difficulty</key>
+		<string></string>
+		<key>Impact</key>
+		<string></string>
+		<key>Points</key>
+		<string></string>
+		<key>Frequency</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

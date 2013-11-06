@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Team_Key</key>
+		<integer>0</integer>
+		<key>Team_Name</key>
+		<string>Team 0:  University of Utah</string>
+		<key>Team_Category_Key</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>1</integer>
+		<key>Team_Name</key>
+		<string>Team 1:  Weber State</string>
+		<key>Team_Category_Key</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>2</integer>
+		<key>Team_Name</key>
+		<string>Team 2: Utah State University</string>
+		<key>Team_Category_Key</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>3</integer>
+		<key>Team_Name</key>
+		<string>Team 3:  Westminister</string>
+		<key>Team_Category_Key</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>4</integer>
+		<key>Team_Name</key>
+		<string>Team 4:  Business A</string>
+		<key>Team_Category_Key</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>5</integer>
+		<key>Team_Name</key>
+		<string>Team 5:  Business B</string>
+		<key>Team_Category_Key</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>6</integer>
+		<key>Team_Name</key>
+		<string>Team 6:  Business C</string>
+		<key>Team_Category_Key</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>7</integer>
+		<key>Team_Name</key>
+		<string>Team 7:  Business D</string>
+		<key>Team_Category_Key</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>8</integer>
+		<key>Team_Name</key>
+		<string>Team 8:  Business E</string>
+		<key>Team_Category_Key</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>9</integer>
+		<key>Team_Name</key>
+		<string>Team 9:  Organization 1</string>
+		<key>Team_Category_Key</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>10</integer>
+		<key>Team_Name</key>
+		<string>Team 10:  Organization 2</string>
+		<key>Team_Category_Key</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>Team_Key</key>
+		<integer>11</integer>
+		<key>Team_Name</key>
+		<string>Team 11:  Organization 3</string>
+		<key>Team_Category_Key</key>
+		<integer>2</integer>
+	</dict>
+</array>
+</plist>
