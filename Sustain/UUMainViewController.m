@@ -391,7 +391,7 @@
             [[self navigationController] pushViewController:topUsersViewController animated:TRUE];
             break;
         case 2: // Teams
-            teamCategoriesViewController = [[UUTeamCategoriesViewController alloc] initWithModel:_model];
+            teamCategoriesViewController = [[UUTeamCategoriesViewController alloc] initWithModel:_model andProgramConstants:_programConstants];
             [[self navigationController] pushViewController:teamCategoriesViewController animated:TRUE];
             break;
         case 3: // About
@@ -403,7 +403,7 @@
             [[self navigationController] pushViewController:sponsorsViewController animated:TRUE];
             break;
         case 5: // Profile  FB/Twitter
-            profileViewController = [[UUProfileViewController alloc] initWithModel:_model];
+            profileViewController = [[UUProfileViewController alloc] initWithModel:_model andProgramConstants:_programConstants];
             [[self navigationController] pushViewController:profileViewController animated:TRUE];
             break;
         default:

@@ -33,6 +33,25 @@
 -(void) ParticipantLoginServerDataReceived:(int)responseCase;
 @end
 
+// Update Profile
+@protocol UUUpdateProfileResponseReceivedDelegate
+@required
+-(void) UpdateProfileResponseReceived:(int)responseCase;
+@end
+
+// Update Profile
+@protocol UUGetProfileDataReceivedDelegate
+@required
+-(void) GetProfileDataReceived:(NSMutableDictionary*)responseDictionary;
+@end
+
+
+// Update Profile
+@protocol UUResponseForNewTeamReceivedDelegate
+@required
+-(void) responseDataForRequestNewTeamReceived:(int)responseCase;
+@end
+
 
 
 @interface UUSustainModel : NSObject
@@ -72,6 +91,11 @@
 @property (nonatomic, weak) id dataFinishedLoadingDelegate;
 @property (nonatomic, weak) id registerParticipantDataReceivedDelegate;
 @property (nonatomic, weak) id participantLoginDataReceivedDelegate;
+@property (nonatomic, weak) id updateProfileResponseReceivedDelegate;
+@property (nonatomic, weak) id getProfileDataReceivedDelegate;
+
+@property (nonatomic, weak) id responseForRequestNewTeamReceivedDelegate;
+
 
 // methods
 - (void) getStartupDataFromServer;
@@ -95,6 +119,8 @@
 - (void) storeUserName: (NSString*)userName;
 - (void) storeEmail:(NSString*)email andPassword: (NSString*)password;
 - (NSString*) getUserName;
+- (UIImage*) getProfileImage;
+- (int) getUserKey;
 
 
 - (UIColor*) tealColor;

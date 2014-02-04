@@ -34,7 +34,6 @@
 		CA1ADC92171CC2EC0098BD8E /* UUSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1ADC91171CC2EC0098BD8E /* UUSponsorsViewController.m */; };
 		CA1ADC95171CC2FF0098BD8E /* UUProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1ADC94171CC2FF0098BD8E /* UUProfileViewController.m */; };
 		CA1ADCA1171CDDEB0098BD8E /* TeamCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1ADCA0171CDDEB0098BD8E /* TeamCategories.plist */; };
-		CA1ADCA4171CE3040098BD8E /* UUTeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1ADCA3171CE3030098BD8E /* UUTeamsViewController.m */; };
 		CA1ADCA7171CE4410098BD8E /* UUTeamCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1ADCA6171CE4410098BD8E /* UUTeamCategoriesViewController.m */; };
 		CA1ADCC4171DADE70098BD8E /* topAndBottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1ADCBA171DADE70098BD8E /* topAndBottomRowSelected.png */; };
 		CA1ADCC8171DADE70098BD8E /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA1ADCBE171DADE70098BD8E /* topRowSelected.png */; };
@@ -66,9 +65,25 @@
 		CADD0DD01812E2E200C9E261 /* greenUicon.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DCF1812E2E200C9E261 /* greenUicon.png */; };
 		CADD0DD21812E36F00C9E261 /* greenUiconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DD11812E36F00C9E261 /* greenUiconRetina.png */; };
 		CADD0DD418161B2700C9E261 /* logo_greenu_final.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DD318161B2600C9E261 /* logo_greenu_final.png */; };
+		CADD0DD8183177C600C9E261 /* UUProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = CADD0DD7183177C600C9E261 /* UUProfileView.m */; };
+		CADD0DDA183187E300C9E261 /* RedSkeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DD9183187E300C9E261 /* RedSkeleton.png */; };
+		CADD0DDC183187E800C9E261 /* Oscar.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DDB183187E800C9E261 /* Oscar.png */; };
+		CADD0DDE1843D7CC00C9E261 /* Oscar300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DDD1843D7CC00C9E261 /* Oscar300x300.png */; };
+		CADD0DE01843D8C500C9E261 /* Oscar250x250.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DDF1843D8C500C9E261 /* Oscar250x250.png */; };
+		CADD0DE21843DA0800C9E261 /* Oscar100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DE11843DA0800C9E261 /* Oscar100x100.png */; };
+		CADD0DE41843DAC100C9E261 /* Oscar150x150.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DE31843DAC100C9E261 /* Oscar150x150.png */; };
+		CADD0DE61843DB3500C9E261 /* Oscar200x200.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD0DE51843DB3500C9E261 /* Oscar200x200.png */; };
 		CAEA93331721A03F00E5FC5F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEA93321721A03F00E5FC5F /* Default@2x.png */; };
 		CAEA93351721A0A400E5FC5F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEA93341721A0A400E5FC5F /* Default.png */; };
 		CAEA93371721A17E00E5FC5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEA93361721A17E00E5FC5F /* Default-568h@2x.png */; };
+		CAF2E9B1187E30B8000BF8F1 /* UUTeamCategoriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF2E9B0187E30B8000BF8F1 /* UUTeamCategoriesView.m */; };
+		CAF2E9B318820692000BF8F1 /* inverted_triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF2E9B218820692000BF8F1 /* inverted_triangle.png */; };
+		CAF2E9B618820B28000BF8F1 /* UUIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF2E9B518820B28000BF8F1 /* UUIconButton.m */; };
+		CAF2E9B918821F9C000BF8F1 /* UUPickerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF2E9B818821F9C000BF8F1 /* UUPickerContainerView.m */; };
+		CAF2E9C218830344000BF8F1 /* UUCreateTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF2E9C118830344000BF8F1 /* UUCreateTeamViewController.m */; };
+		CAF2E9C51883035D000BF8F1 /* UUCreateTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF2E9C41883035C000BF8F1 /* UUCreateTeamView.m */; };
+		CAF2E9C718830FEA000BF8F1 /* checkbox_full.ico in Resources */ = {isa = PBXBuildFile; fileRef = CAF2E9C618830FEA000BF8F1 /* checkbox_full.ico */; };
+		CAF2E9C918830FF1000BF8F1 /* checkbox_empty.ico in Resources */ = {isa = PBXBuildFile; fileRef = CAF2E9C818830FF1000BF8F1 /* checkbox_empty.ico */; };
 		CAFAB06E17724F1C00E5DE8C /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = CAFAB06D17724F1C00E5DE8C /* button.png */; };
 		CAFAB0701772513D00E5DE8C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = CAFAB06F1772513D00E5DE8C /* background.png */; };
 		CAFB953B17209423003542FC /* Topic.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAFB953A17209423003542FC /* Topic.plist */; };
@@ -85,7 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		75DB3B821716181E00CCA645 /* Sustain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sustain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75DB3B821716181E00CCA645 /* greenU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = greenU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DB3B851716181E00CCA645 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75DB3B871716181E00CCA645 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75DB3B891716181E00CCA645 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,8 +135,6 @@
 		CA1ADC93171CC2FF0098BD8E /* UUProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUProfileViewController.h; sourceTree = "<group>"; };
 		CA1ADC94171CC2FF0098BD8E /* UUProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUProfileViewController.m; sourceTree = "<group>"; };
 		CA1ADCA0171CDDEB0098BD8E /* TeamCategories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TeamCategories.plist; sourceTree = "<group>"; };
-		CA1ADCA2171CE3030098BD8E /* UUTeamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUTeamsViewController.h; sourceTree = "<group>"; };
-		CA1ADCA3171CE3030098BD8E /* UUTeamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUTeamsViewController.m; sourceTree = "<group>"; };
 		CA1ADCA5171CE4400098BD8E /* UUTeamCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUTeamCategoriesViewController.h; sourceTree = "<group>"; };
 		CA1ADCA6171CE4410098BD8E /* UUTeamCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUTeamCategoriesViewController.m; sourceTree = "<group>"; };
 		CA1ADCBA171DADE70098BD8E /* topAndBottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topAndBottomRowSelected.png; sourceTree = "<group>"; };
@@ -164,9 +177,31 @@
 		CADD0DD11812E36F00C9E261 /* greenUiconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenUiconRetina.png; path = ../greenUiconRetina.png; sourceTree = "<group>"; };
 		CADD0DD318161B2600C9E261 /* logo_greenu_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_greenu_final.png; path = "../../../Desktop/GreenU images/logo_greenu_final.png"; sourceTree = "<group>"; };
 		CADD0DD5182857B500C9E261 /* NSStrinAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStrinAdditions.h; sourceTree = "<group>"; };
+		CADD0DD6183177C600C9E261 /* UUProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUProfileView.h; sourceTree = "<group>"; };
+		CADD0DD7183177C600C9E261 /* UUProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUProfileView.m; sourceTree = "<group>"; };
+		CADD0DD9183187E300C9E261 /* RedSkeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedSkeleton.png; sourceTree = "<group>"; };
+		CADD0DDB183187E800C9E261 /* Oscar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oscar.png; sourceTree = "<group>"; };
+		CADD0DDD1843D7CC00C9E261 /* Oscar300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oscar300x300.png; sourceTree = "<group>"; };
+		CADD0DDF1843D8C500C9E261 /* Oscar250x250.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oscar250x250.png; sourceTree = "<group>"; };
+		CADD0DE11843DA0800C9E261 /* Oscar100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oscar100x100.png; sourceTree = "<group>"; };
+		CADD0DE31843DAC100C9E261 /* Oscar150x150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oscar150x150.png; sourceTree = "<group>"; };
+		CADD0DE51843DB3500C9E261 /* Oscar200x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oscar200x200.png; sourceTree = "<group>"; };
 		CAEA93321721A03F00E5FC5F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		CAEA93341721A0A400E5FC5F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		CAEA93361721A17E00E5FC5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		CAF2E9AF187E30B8000BF8F1 /* UUTeamCategoriesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUTeamCategoriesView.h; sourceTree = "<group>"; };
+		CAF2E9B0187E30B8000BF8F1 /* UUTeamCategoriesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUTeamCategoriesView.m; sourceTree = "<group>"; };
+		CAF2E9B218820692000BF8F1 /* inverted_triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inverted_triangle.png; sourceTree = "<group>"; };
+		CAF2E9B418820B28000BF8F1 /* UUIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUIconButton.h; sourceTree = "<group>"; };
+		CAF2E9B518820B28000BF8F1 /* UUIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUIconButton.m; sourceTree = "<group>"; };
+		CAF2E9B718821F9C000BF8F1 /* UUPickerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUPickerContainerView.h; sourceTree = "<group>"; };
+		CAF2E9B818821F9C000BF8F1 /* UUPickerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUPickerContainerView.m; sourceTree = "<group>"; };
+		CAF2E9C018830343000BF8F1 /* UUCreateTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUCreateTeamViewController.h; sourceTree = "<group>"; };
+		CAF2E9C118830344000BF8F1 /* UUCreateTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUCreateTeamViewController.m; sourceTree = "<group>"; };
+		CAF2E9C31883035B000BF8F1 /* UUCreateTeamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUCreateTeamView.h; sourceTree = "<group>"; };
+		CAF2E9C41883035C000BF8F1 /* UUCreateTeamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUCreateTeamView.m; sourceTree = "<group>"; };
+		CAF2E9C618830FEA000BF8F1 /* checkbox_full.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = checkbox_full.ico; sourceTree = "<group>"; };
+		CAF2E9C818830FF1000BF8F1 /* checkbox_empty.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = checkbox_empty.ico; sourceTree = "<group>"; };
 		CAFAB06D17724F1C00E5DE8C /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		CAFAB06F1772513D00E5DE8C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		CAFB953A17209423003542FC /* Topic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Topic.plist; sourceTree = "<group>"; };
@@ -212,7 +247,7 @@
 		75DB3B831716181E00CCA645 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75DB3B821716181E00CCA645 /* Sustain.app */,
+				75DB3B821716181E00CCA645 /* greenU.app */,
 				75DB3BAB1716181E00CCA645 /* SustainTests.octest */,
 			);
 			name = Products;
@@ -323,6 +358,16 @@
 		CA1ADC9F171CD3270098BD8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CAF2E9C818830FF1000BF8F1 /* checkbox_empty.ico */,
+				CAF2E9C618830FEA000BF8F1 /* checkbox_full.ico */,
+				CAF2E9B218820692000BF8F1 /* inverted_triangle.png */,
+				CADD0DE51843DB3500C9E261 /* Oscar200x200.png */,
+				CADD0DE31843DAC100C9E261 /* Oscar150x150.png */,
+				CADD0DE11843DA0800C9E261 /* Oscar100x100.png */,
+				CADD0DDB183187E800C9E261 /* Oscar.png */,
+				CADD0DDF1843D8C500C9E261 /* Oscar250x250.png */,
+				CADD0DDD1843D7CC00C9E261 /* Oscar300x300.png */,
+				CADD0DD9183187E300C9E261 /* RedSkeleton.png */,
 				CADD0DD11812E36F00C9E261 /* greenUiconRetina.png */,
 				CADD0DCF1812E2E200C9E261 /* greenUicon.png */,
 				CA58EC4D17E00C9B00FFE654 /* januaryChallengeImage.png */,
@@ -417,8 +462,16 @@
 			children = (
 				CA1ADCA5171CE4400098BD8E /* UUTeamCategoriesViewController.h */,
 				CA1ADCA6171CE4410098BD8E /* UUTeamCategoriesViewController.m */,
-				CA1ADCA2171CE3030098BD8E /* UUTeamsViewController.h */,
-				CA1ADCA3171CE3030098BD8E /* UUTeamsViewController.m */,
+				CAF2E9AF187E30B8000BF8F1 /* UUTeamCategoriesView.h */,
+				CAF2E9B0187E30B8000BF8F1 /* UUTeamCategoriesView.m */,
+				CAF2E9B718821F9C000BF8F1 /* UUPickerContainerView.h */,
+				CAF2E9B818821F9C000BF8F1 /* UUPickerContainerView.m */,
+				CAF2E9B418820B28000BF8F1 /* UUIconButton.h */,
+				CAF2E9B518820B28000BF8F1 /* UUIconButton.m */,
+				CAF2E9C018830343000BF8F1 /* UUCreateTeamViewController.h */,
+				CAF2E9C118830344000BF8F1 /* UUCreateTeamViewController.m */,
+				CAF2E9C31883035B000BF8F1 /* UUCreateTeamView.h */,
+				CAF2E9C41883035C000BF8F1 /* UUCreateTeamView.m */,
 			);
 			name = TeamsControllers;
 			sourceTree = "<group>";
@@ -446,6 +499,8 @@
 			children = (
 				CA1ADC93171CC2FF0098BD8E /* UUProfileViewController.h */,
 				CA1ADC94171CC2FF0098BD8E /* UUProfileViewController.m */,
+				CADD0DD6183177C600C9E261 /* UUProfileView.h */,
+				CADD0DD7183177C600C9E261 /* UUProfileView.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -467,7 +522,7 @@
 			);
 			name = greenU;
 			productName = Sustain;
-			productReference = 75DB3B821716181E00CCA645 /* Sustain.app */;
+			productReference = 75DB3B821716181E00CCA645 /* greenU.app */;
 			productType = "com.apple.product-type.application";
 		};
 		75DB3BAA1716181E00CCA645 /* SustainTests */ = {
@@ -556,6 +611,16 @@
 				CADD0DD01812E2E200C9E261 /* greenUicon.png in Resources */,
 				CADD0DD21812E36F00C9E261 /* greenUiconRetina.png in Resources */,
 				CADD0DD418161B2700C9E261 /* logo_greenu_final.png in Resources */,
+				CADD0DDA183187E300C9E261 /* RedSkeleton.png in Resources */,
+				CADD0DDC183187E800C9E261 /* Oscar.png in Resources */,
+				CADD0DDE1843D7CC00C9E261 /* Oscar300x300.png in Resources */,
+				CADD0DE01843D8C500C9E261 /* Oscar250x250.png in Resources */,
+				CADD0DE21843DA0800C9E261 /* Oscar100x100.png in Resources */,
+				CADD0DE41843DAC100C9E261 /* Oscar150x150.png in Resources */,
+				CADD0DE61843DB3500C9E261 /* Oscar200x200.png in Resources */,
+				CAF2E9B318820692000BF8F1 /* inverted_triangle.png in Resources */,
+				CAF2E9C718830FEA000BF8F1 /* checkbox_full.ico in Resources */,
+				CAF2E9C918830FF1000BF8F1 /* checkbox_empty.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +668,6 @@
 				CA1ADC8F171CC2D70098BD8E /* UUAboutViewController.m in Sources */,
 				CA1ADC92171CC2EC0098BD8E /* UUSponsorsViewController.m in Sources */,
 				CA1ADC95171CC2FF0098BD8E /* UUProfileViewController.m in Sources */,
-				CA1ADCA4171CE3040098BD8E /* UUTeamsViewController.m in Sources */,
 				CA1ADCA7171CE4410098BD8E /* UUTeamCategoriesViewController.m in Sources */,
 				98677AD21720B74700166715 /* SVProgressHUD.m in Sources */,
 				CA375833179612D000D86C7B /* UUSignInViewController.m in Sources */,
@@ -611,6 +675,12 @@
 				CA58EC3D17D69CCF00FFE654 /* UUCreateUserViewController.m in Sources */,
 				CA58EC4117D6C19900FFE654 /* UUCreateUserView.m in Sources */,
 				CA58EC4417D6CD8900FFE654 /* UUProgramConstants.m in Sources */,
+				CADD0DD8183177C600C9E261 /* UUProfileView.m in Sources */,
+				CAF2E9B1187E30B8000BF8F1 /* UUTeamCategoriesView.m in Sources */,
+				CAF2E9B618820B28000BF8F1 /* UUIconButton.m in Sources */,
+				CAF2E9B918821F9C000BF8F1 /* UUPickerContainerView.m in Sources */,
+				CAF2E9C218830344000BF8F1 /* UUCreateTeamViewController.m in Sources */,
+				CAF2E9C51883035D000BF8F1 /* UUCreateTeamView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

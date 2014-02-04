@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "UUSustainModel.h"
-#import "UUTeamsViewController.h"
+#import "UUProgramConstants.h"
+#import "UUTeamCategoriesView.h"
+#import "UUCreateTeamViewController.h"
 
-@interface UUTeamCategoriesViewController : UIViewController
+@interface UUTeamCategoriesViewController : UIViewController<UUTeamCategoriesViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UUPickerContainerViewDelegate>
 {
     UUSustainModel* _model;
-    UUTeamsViewController* teamsViewController;
+    UUProgramConstants* _programConstants;
+    UUCreateTeamViewController* _createTeamViewController;
+    
 }
 
-- (id)initWithModel:(UUSustainModel*)model;
+- (id)initWithModel:(UUSustainModel*)model andProgramConstants:(UUProgramConstants*)programConstants;
 
 @end

@@ -16,6 +16,13 @@
 {
     int _numOfCategories;
     NSMutableArray* _categoryNames;
+    
+    
+    NSArray* _pickerInputArray;  // picker reads from this
+    //these are used to switch _pickerInputArray pointer
+    NSArray* _schoolTeamsArray;
+    NSArray* _businessesTeamsArray;
+    NSArray* _otherTeamsArray;
 
 }
 
@@ -23,32 +30,38 @@
  *
  *      Constructor:  create a weak reference to the model
  */
-- (id)initWithModel:(UUSustainModel*)model
+- (id)initWithModel:(UUSustainModel*)model andProgramConstants:(UUProgramConstants*)programConstants
 {
     self = [super init];
     if (self)
     {
         // Custom initialization
         
-        //fill in the data model to use
-        _model = model;        
+        //create a weak reference to the model
+        _model = model;
         
-        [self.view setBackgroundColor:[_model tealColor]]; // for testing (sanity check)
+        //create a weak reference to the program constants
+        _programConstants = programConstants;
         
         
-        //fill in the list of categories
-        _numOfCategories = [_model numberOfTeamCategories];
-        _categoryNames = [[NSMutableArray alloc] init];
+        // get team info from the server
+        //model to send email to server
+        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
         
-        for (int i = 0; i < _numOfCategories; i++)
-        {
-            [_categoryNames addObject: [_model nameOfTeamCategory:i]];
-        }
+        /// create data dictionary and send it to the model
+        //NSLog(@"PASSWORD, EMAIL, and DISPLAY NAME ALL GOOD\n"); // for testing
+        NSArray* objects = [NSArray arrayWithObjects: @"SCHOOL", nil];
+        NSArray* keys    = [NSArray arrayWithObjects:@"teamCategory",nil];
+        NSMutableDictionary* teamCategoryDictionary = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
         
-        // add in one more category at the end
-        [_categoryNames addObject:@"Create New Team"];
-        _numOfCategories++;  // increment to represent the actual count of categories
+        [_model sendMessageToServer:getTeamsByType withDataDictionary:teamCategoryDictionary];
         
+        //_schoolTeamsArray = [NSArray arrayWithObjects:@"School1", @"School2", @"School3", @"School4", nil];
+        //_businessesTeamsArray = [NSArray arrayWithObjects:@"Business1", @"Business2", @"Business3", nil];
+        //_otherTeamsArray = [NSArray arrayWithObjects:@"Other1", @"Other2", @"Other3", @"Other4", @"Other5", nil];
+        
+        
+                
         
     }
     return self;
@@ -69,47 +82,35 @@
  */
 - (void) loadView
 {
-    
-    UITableView* tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [self setView:tableView];
+    self.view = [[UUTeamCategoriesView alloc] initWithProgramConstants:_programConstants];
+        
+
     
 }// end loadView
 
 
-/***
- *  In the viewDidLoad method we need to set the datasource and delegate to self.  Recall, we also need to implement the
- *  UITableViewDataSource and UITableViewDelegate interfaces at  the top of this file, next to
- *  @interface
- *
- */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view.
     
+    // set the view's delegate to self (this controller)
+    [(UUTeamCategoriesView*)self.view setTeamCategoriesViewDelegate:self];
+    [(UUTeamCategoriesView*)self.view setSubViewDelegates:self];
     
-    // set the background of the tableView
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"greenLoadingImage.jpeg"]];
-    [tempImageView setFrame:self.view.frame];
-    [self contentView].backgroundView = tempImageView;
-    
-    // Do any additional setup after loading the view.
-    [[self contentView] setDataSource:self];
-    [[self contentView] setDelegate:self];
-    
-    
-}// end viewDidLoad
-
-/***
- *  A getter for the content view.  We assigned this class's view to be a table view,
- *  and without this getter, we would always have to cast the view as a tableview first
- *  in order to access the tableview properties.  It is just easier to write a simple
- *  method to do that.
- *
- */
-- (UITableView*)contentView
-{
-    return (UITableView*)[self view];
 }
+
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationItem.title = @"TEAMS";
+    // with iOS5 the navigation bar now has title text attributes set with a dictionary
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    
+} // end viewWillAppear
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -117,74 +118,175 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-/***********************************************************************************************
+/**************************************************************************************************
  *
- *                          UITableViewDataSource methods
+ *                          for easy access to view
  *
- ***********************************************************************************************/
-#pragma mark - UITableViewDataSource methods
-
-/***
- *
- *  get the number of top level rows from our data model
- */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+ **************************************************************************************************/
+- (UUTeamCategoriesView*)getView
 {
-    return 1;  // each section will only have one row in this table view
-    
-}// end numberOfRowsInSection
-
-
-/***
- * This method is optional.  (How we create the number of sections needed)
- * Default is 1 if not implemented
- *
- */
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return _numOfCategories;
-    
-}// end numberOfSectionsInTableView
-
-
-/***
- * Create the individual cells
- *
- */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Create table view cell
-    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    NSString* text = [_categoryNames objectAtIndex:[indexPath section]];
-
-    UIColor* textColor= [UIColor blackColor];
-    
-    [[cell textLabel] setText:text];
-    cell.textLabel.textColor = textColor;
-	
-    return cell;
+    return (UUTeamCategoriesView*)[self view];
 }
 
-/***********************************************************************************************
- *
- *                          UITableViewDelegate methods
- *
- ***********************************************************************************************/
 
-#pragma mark - UITableViewDelegate methods
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/**********************************************************************************************************
+ *
+ *                          UUTeamCategoriesView Delegate Methdods
+ *
+ **********************************************************************************************************/
+#pragma - mark UUTeamCategoriesViewDelegate Methods
+
+-(void) schoolsButtonWasPressed
 {
-    // step 12 - this just makes it look pretty
-    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+    //NSLog(@"Schools button pressed");
+    //first, reload the correct data for picker and reload the data
+    _pickerInputArray = _schoolTeamsArray;
+    [(UUTeamCategoriesView*)[self view] pickerViewReloadData];
     
-    teamsViewController = [[UUTeamsViewController alloc]initWithModel:_model];
-    [[self navigationController] pushViewController:teamsViewController animated:TRUE];
+    [(UUTeamCategoriesView*)[self view] showPickerView];
+}
 
+-(void) businessesButtonWasPressed
+{
+    //NSLog(@"businesses button pressed");
+    //first, reload the correct data for picker and reload the data
+    _pickerInputArray = _businessesTeamsArray;
+    [(UUTeamCategoriesView*)[self view] pickerViewReloadData];
     
-}// end didSelectRowAtIndexPath
+    [(UUTeamCategoriesView*)[self view] showPickerView];
+}
+
+-(void) otherButtonWasPressed
+{
+    // NSLog(@"Other button pressed");
+    //first, reload the correct data for picker and reload the data
+    _pickerInputArray = _otherTeamsArray;
+    [(UUTeamCategoriesView*)[self view] pickerViewReloadData];
+    
+    [(UUTeamCategoriesView*)[self view] showPickerView];
+
+}
+
+-(void) requestNewTeamButtonWasPressed
+{
+    
+    NSLog(@"Request New Team button pressed");
+    _createTeamViewController = [[UUCreateTeamViewController alloc] initWithModel:_model andProgramConstants:_programConstants];
+    [[self navigationController] pushViewController:_createTeamViewController animated:TRUE];
+}
+
+/**********************************************************************************************************
+ *
+ *                          UUTeamPickerView Delegate Methods
+ *
+ **********************************************************************************************************/
+#pragma mark -
+#pragma mark UIPickerViewDelegate
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+
+}//end picker did Select row
+
+
+
+/***
+ *  This method is used to allow custom fonts and sizes
+ *
+ */
+
+- (UIView*)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel* pickerViewLabel = (id)view;    
+    if (!pickerViewLabel)
+    {
+        pickerViewLabel= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
+    }
+    pickerViewLabel.backgroundColor = [UIColor clearColor];
+    
+    //this hides the outer frame of the picker so it looks like it is floating in space
+    [(UIView*)[[pickerView subviews] objectAtIndex:0] setHidden:YES];
+    [(UIView*)[[pickerView subviews] objectAtIndex:[pickerView subviews].count - 1] setHidden:YES];
+    
+    //kind of a clunky fix - the picker shows the text right on the left edge
+    //the spacer string pushes it over a bit
+    NSString* textString = [NSString stringWithFormat:@"   %@", [_pickerInputArray objectAtIndex:row]];
+    pickerViewLabel.text = textString;
+    pickerViewLabel.font = [_programConstants getBoldFontWithSize:16.0];
+    return pickerViewLabel;
+    
+}// end viewForRow
+
+
+
+
+
+
+/**********************************************************************************************************
+ *
+ *                          UUTeamPickerView DataSource Methods
+ *
+ **********************************************************************************************************/
+#pragma mark -
+#pragma mark UIPickerViewDataSource
+/*
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+	NSString *returnStr = @"";
+    
+    returnStr = [_pickerInputArray objectAtIndex:row];
+	
+	// note: custom picker doesn't care about titles, it uses custom views
+	if (pickerView == myPickerView)
+	{
+		if (component == 0)
+		{
+			returnStr = [pickerViewArray objectAtIndex:row];
+		}
+		else
+		{
+			returnStr = [[NSNumber numberWithInt:row] stringValue];
+		}
+	}
+	
+	return returnStr;
+}*/
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+	return 30.0;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+	return [_pickerInputArray count];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+	return 1;
+}
+
+
+/**********************************************************************************************************
+ *
+ *                          UUPickerViewContainerDelegate Methods
+ *
+ **********************************************************************************************************/
+#pragma mark -
+#pragma mark UUPickerViewContainerDelegate
+
+-(void) cancelButtonWasPressed
+{
+    NSLog(@"cancel button was pressed");
+    [(UUTeamCategoriesView*)[self view] hidePickerView];
+}
+
+-(void) selectTeamButtonWasPressed
+{
+    NSLog(@"select team button was pressed");
+}
 
 
 

@@ -10,6 +10,7 @@
 
 #define invalidEmailString @"Please enter a valid email."
 #define invalidPasswordString @"Passwords must be at least 5 characters long."
+#define invalidUserNameString @"Display names must be no longer than 20 characters long."
 #define emailExistsString @"Email already exists.  Please login or enter a new email."
 #define invalidDisplayName @"Please enter a display name."
 #define generalServerErrorString @"Server currently unavailable.  Please try again later."
@@ -385,7 +386,18 @@
             break;
         
         }
-        case 1003: //email already exists
+        case 1003: // invalid username format
+        {
+            [[self getView] updateErrorMessage:invalidUserNameString];
+            //set the focus to the password field
+            UITextField* passwordTextField = (UITextField *)[self.view viewWithTag:displayNameTFTag];
+            [passwordTextField becomeFirstResponder];
+            
+            
+            break;
+            
+        }
+        case 1004: //email already exists
         {
             [[self getView] updateErrorMessage:emailExistsString];
             //set focus to email field
@@ -442,7 +454,7 @@
 -(BOOL) displayNameIsOK:(NSString*) displayString
 {
     int stringLength = [displayString length];
-    if ( stringLength < 1 || stringLength > 25)
+    if ( stringLength < 1 || stringLength > 20)
         return NO;
     //check that not all characters are spaces
     for (int i = 0; i < stringLength; i++)

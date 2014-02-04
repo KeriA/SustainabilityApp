@@ -139,12 +139,11 @@
         [theLayer setCornerRadius: 6.0];
         [theLayer setBorderWidth: 0.0];// we want this button to look like a link, so no border
         [theLayer setBorderColor:[UIColor clearColor].CGColor];
-        [_signUpButton setTitle:@"Sign Up for greenU" forState:UIControlStateNormal];
-        _signUpButton.titleLabel.font = [_programConstants getStandardFontWithSize:16.0];
-        //_signUpButton.contentEdgeInsets = UIEdgeInsetsMake(10.0, 0.0, 0.0, 0.0);  // see 'important note' above
-        _signUpButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        
-        // set the delegate for the button to be the SignInViewControllers
+        // This button needs to look like a link - with underlined text - use NSAttributed String
+        NSDictionary* underlineAttribute = @{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle), NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [_programConstants getStandardFontWithSize:16]};
+        NSAttributedString* attString = [[NSAttributedString alloc] initWithString:@"Sign Up for greenU" attributes:underlineAttribute];
+        [_signUpButton setAttributedTitle:attString forState:UIControlStateNormal];
+         // set the delegate for the button to be the SignInViewControllers
         [_signUpButton addTarget: signInViewDelegate
                           action:@selector(signUpButtonWasPressed)
                 forControlEvents:UIControlEventTouchDown];

@@ -59,7 +59,7 @@
     // set the view's delegate to self (this controller)
     [(UUSignInView*)self.view setSignInViewDelegate:self];
   
-    // set the subviews' delegates to self (this controller)
+    // set the subviews' delegates to self (this controller)   ?????????????????????????????????????????????????
     [(UUCreateUserView*)self.view setSubViewDelegates:self];
     
     
@@ -328,9 +328,9 @@
                                                  animated: YES];
             break;
         }
-        case 1011:  // email does not exist
+        case 1001:  // invalid email format
         {
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Email does not exist." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter a valid email format." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
           //  [alert release];
             //[[self getView] updateErrorMessage:invalidEmailString];
@@ -341,9 +341,9 @@
             
             break;
         }
-        case 1012: // incorrect password
+        case 1004: // login failure    !!!!!!!!!this needs to be taken out!!!!!!
         {
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Incorrect Password." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Either an incorrect email or password was entered.  Please check your email address and password and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
             //set the focus to the password field
             UITextField* passwordTextField = (UITextField *)[self.view viewWithTag:passwordTag];
@@ -353,6 +353,19 @@
             break;
             
         }
+        case 1005: // login failure
+        {
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Either an incorrect email or password was entered.  Please check your email address and password and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            //set the focus to the password field
+            UITextField* passwordTextField = (UITextField *)[self.view viewWithTag:passwordTag];
+            [passwordTextField becomeFirstResponder];
+            
+            
+            break;
+            
+        }
+
         default: //general server error
         {
             UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Server Unavailable.  Please check your connection or try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];

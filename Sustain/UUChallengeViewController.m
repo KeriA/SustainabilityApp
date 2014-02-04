@@ -86,6 +86,17 @@
    // [SVProgressHUD dismiss];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationItem.title = @"Challenges";
+    // with iOS5 the navigation bar now has title text attributes set with a dictionary
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    
+} // end viewWillAppear
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -162,6 +173,7 @@
     {
         pickerViewLabel= [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
     }
+    pickerViewLabel.backgroundColor = [UIColor clearColor];
     
     [(UIView*)[[pickerView subviews] objectAtIndex:0] setHidden:YES];
     [(UIView*)[[pickerView subviews] objectAtIndex:[pickerView subviews].count - 1] setHidden:YES];

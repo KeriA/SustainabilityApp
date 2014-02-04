@@ -23,6 +23,11 @@
 #define registerParticipant 0
 #define participantLogin 1
 #define updateUserProfile 2
+#define getUserProfile 3
+#define forgotPassword 4
+#define getAllTeams 5
+#define getTeamsByType 6
+#define requestNewTeam 7
 
 
 
@@ -30,6 +35,12 @@
 #define registerParticipantRequest @"/registerparticipant"
 #define participantLoginRequest @"/participantlogin"
 #define updateUserProfileRequest @"/updateprofile"
+#define getUserProfileRequest @"/getprofile"
+#define forgotPasswordRequest @"/forgotpassword"
+#define getAllTeamsRequest @"/getallteams"
+#define getTeamsByTypeRequest  @"/getteamsbytype"
+#define requestNewTeamRequest @"/requestnewteam"
+
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!take this out!!!!!!!!!!!!!!!!!!!!!!
 #define CSNetworkInTheatersRequest @"/lists/movies/in_theaters.json"

@@ -158,8 +158,6 @@
    // UIFont* newFont = [UIFont fontWithName:gillSansLight size:size];
     UIFont* newFont = [UIFont boldSystemFontOfSize:size];
 
-    
-    
     return newFont;
     
 }// end getBoldFontWithSize

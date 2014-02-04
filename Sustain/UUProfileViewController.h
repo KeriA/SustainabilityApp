@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "UUSustainModel.h"
+#import "UUProgramConstants.h"
+#import "UUProfileView.h"
 
-@interface UUProfileViewController : UIViewController
+
+//UURegisterParticipantDataReceivedDelegate
+@interface UUProfileViewController : UIViewController<UUProfileViewDelegate, UUUpdateProfileResponseReceivedDelegate,
+                                     UUGetProfileDataReceivedDelegate>
 {
     UUSustainModel* _model;
+    UUProgramConstants* _programConstants;
+    UIImage* _profileImage;
 }
 
-- (id)initWithModel:(UUSustainModel*)model;
+- (id)initWithModel:(UUSustainModel*)model andProgramConstants:(UUProgramConstants*)programConstants;
 
 @end

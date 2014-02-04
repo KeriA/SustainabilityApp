@@ -18,6 +18,7 @@
     NSString* _userDisplayName;
     NSString* _userEmail;
     NSString* _userPassword;
+    UIImage*  _userProfileImage;
 
 
 }
@@ -25,6 +26,10 @@
 @synthesize dataFinishedLoadingDelegate;
 @synthesize registerParticipantDataReceivedDelegate;
 @synthesize participantLoginDataReceivedDelegate;
+@synthesize updateProfileResponseReceivedDelegate;
+@synthesize getProfileDataReceivedDelegate;
+
+@synthesize responseForRequestNewTeamReceivedDelegate;
 
 
 
@@ -177,6 +182,9 @@
     //[self fillTeamsArray:_rawDataArray];
     
 
+    //user display info  - THIS NEEDS TO BE CHANGED!!!!!!!
+    _userProfileImage = [UIImage imageNamed:@"RedSkeleton.png"];
+    
     
 }// end getDataFromLocalDisc
 
@@ -372,6 +380,7 @@
    
     
     int action = POST; // default
+
     
     // set the request string
     switch (serverMethod)  //serverMethod constants declared in NetworkConstants.h
@@ -386,7 +395,7 @@
             NSString* email = [dataDictionary objectForKey:@"email"];
             NSString* password = [dataDictionary objectForKey:@"password"];
             
-            dataString = [NSString stringWithFormat:@"{ 'username' : '%@', 'email' : '%@', 'password' : '%@' }", username, email, password];
+            dataString = [NSString stringWithFormat:@"{ 'UserName' : '%@', 'Email' : '%@', 'Password' : '%@' }", username, email, password];
                         
             break;
         }
@@ -399,12 +408,15 @@
             NSString* email = [dataDictionary objectForKey:@"email"];
             NSString* password = [dataDictionary objectForKey:@"password"];
             
-            dataString = [NSString stringWithFormat:@"{ 'email' : '%@', 'password' : '%@' }", email, password];
+            dataString = [NSString stringWithFormat:@"{ 'Email' : '%@', 'Password' : '%@' }", email, password];
             
             break;
         }
         case (updateUserProfile):
         {
+            
+            methodString = [NSString stringWithFormat:@"%@", updateUserProfileRequest];
+            action = POST;
             /*  how to encode decode an image into base64 string
             // This will load NeonSpark image &amp; *data* variable is holding data of image
             NSData *data = [NSData dataWithContentsOfFile:
@@ -422,26 +434,89 @@
             // log the decoded NSData length
             NSLog(@"Data length is %i",[dataFromBase64 length]);*/
             
+            //PUT THIS BACK IN!!!!!!!!!!!!!!!
+            //int userKey = [self getUserKey];
+            //NSString* userKeyString = @"10002";
+            //UIImage* userImage = [dataDictionary objectForKey:@"userImage"];
+            //NSString* password = [dataDictionary objectForKey:@"password"];
+            //NSString* username = [dataDictionary objectForKey:@"displayName"];
+            //int teamKey = [[dataDictionary objectForKey:@"teamKey"]intValue ];
+            //NSString* teamKeyString = @"0";
             
-            methodString = [NSString stringWithFormat:@"%@", updateUserProfileRequest];
-            action = POST;
+            // tEMPORARY CODE  for testing
+            //UIImage* userImage = [UIImage imageNamed:@"Oscar.png"];
+            //UIImage*userImage = [UIImage imageNamed:@"Oscar300x300.png"];
+            UIImage*userImage = [UIImage imageNamed:@"Oscar200x200.png"];
+            //UIImage*userImage = [UIImage imageNamed:@"FacebookIconSmall.png"];
+            //int userKey = 10004;
             
-            
-            NSString* userKey  = [dataDictionary objectForKey:@"userKey"];
-            UIImage* userImage = [dataDictionary objectForKey:@"userImage"];
-            NSString* password = [dataDictionary objectForKey:@"password"];
-            NSString* username = [dataDictionary objectForKey:@"displayName"];
-            
+             //Update participant password only:
+            //{“UserKey” : 10004,
+            //“UserName” : “”,
+            //“TeamKey” : 0,
+            //“Password” : “YourNewPassword”,
+            //“UserImage” : “” }
+            NSString* userKeyString = @"10004";
+            NSString* username = @"";
+            NSString* teamKeyString = @"0";
+            NSString* password = @"";
+            //NSString* imageString = @"";
+                        
             //convert the image to Base64 to be sent as JSON string
             NSData* dataImage = UIImagePNGRepresentation(userImage);
             NSString* imageString = [NSString base64StringFromData:dataImage length:[dataImage length]];
+            //NSString*imageString = @"This is a test";
+            dataString = [NSString stringWithFormat:@"{ 'UserKey' : '%@', 'UserName' : '%@', 'TeamKey' : '%@', 'Password' : '%@', 'UserImage' : '%@' }",
+                          userKeyString, username, teamKeyString, password, imageString];
             
-            dataString = [NSString stringWithFormat:@"{ 'userKey' : '%@', 'userImage' : '%@', 'password' : '%@', 'userName' : '%@' }", userKey, imageString, password, username];
-
+            
+            
+            NSLog(@"%@", dataString); //for testing
+            
+            break;
             
         }
+        case (getUserProfile):
+        {
+            methodString = [NSString stringWithFormat:@"%@", getUserProfileRequest];
+            action = GET;
+            int userKey = [self getUserKey];
+            dataString = [NSString stringWithFormat:@"{ 'UserKey' : '%d' }", userKey];
+
+            break;
+        }
+        case (forgotPassword):
+        {
+            break;
+        }
+        case (getAllTeams):
+        {
+            break;
+        }
+        case (getTeamsByType):
+        {
+            methodString = [NSString stringWithFormat:@"%@", getTeamsByTypeRequest];
+            action = GET;
             
-               
+            NSString* teamType = [dataDictionary objectForKey:@"teamCategory"];
+            
+            dataString = [NSString stringWithFormat:@"{ '%@' }", teamType];
+            break;
+        }
+        case (requestNewTeam):
+        {
+            methodString = [NSString stringWithFormat:@"%@", requestNewTeamRequest];
+            action = POST;
+            
+            // set up the data to use
+            NSString* userKeyString = [NSString stringWithFormat:@"%d", _userServerKey];
+            NSString* teamName = [dataDictionary objectForKey:@"newTeamName"];
+            NSString* teamCategory = [dataDictionary objectForKey:@"newTeamType"];
+            
+            dataString = [NSString stringWithFormat:@"{ 'UserKey' : '%@', 'TeamName' : '%@', 'TeamCategory' : '%@' }", userKeyString, teamName, teamCategory];
+            
+            break;
+        }
         default:
         {}
     }// end switch
@@ -518,7 +593,32 @@
              }
              case (updateUserProfile):
              {
-                 // set something here
+                 [self responseForUpdateProfileReceived:data withError:error];
+                 break;
+             }
+             case (getUserProfile):
+             {
+                 [self responseForGetProfileReceived:data withError:error];
+                 break;
+             }
+             case (forgotPassword):
+             {
+                 [self responseForForgotPasswordReceived:data withError:error];
+                 break;
+             }
+             case (getAllTeams):
+             {
+                 [self responseForGetAllTeamsReceived:data withError:error];
+                 break;
+             }
+             case (getTeamsByType):
+             {
+                 [self responseForGetTeamsByTypeReceived:data withError:error];
+                 break;
+             }
+             case (requestNewTeam):
+             {
+                 [self responseForRequestNewTeamReceived:data withError:error];
                  break;
              }
              default:
@@ -562,14 +662,15 @@
              //  1000:  success:  participant successfully logged in
              //  1001:  failure:  invalid email format
              //  1002:  failure:  invalid password format
-             //  1003:  failure:  email already exists in  databaes
+             //  1003:  failure:  invalid username format
+             //  1004:  failure:  email already exists in database≈ß
              //  9999:  failure:  general failure
         //   userkey values:
              //  100001:   some user key starting with 100001 if successful
              //  0:        0 upon failure
         
         
-        if (userKey == 1000)//successful register
+        if (responseMessage == 1000)//successful register  ??????? is this supposed to be responsemesage?
         {
             _userServerKey = userKey; //store the key
         }
@@ -611,8 +712,8 @@
         // notes:
         //   message values:
         //  1000:  success:  participant successfully logged in
-        //  1011:  failure:  email does not exist in database
-        //  1012:  failure:  incorrect password
+        //  1001:  failure:  invalid email format
+        //  1005:  failure:  login failure
         //  9999:  failure:  general failure
         //   userkey values:
         //  100001:   some user key starting with 100001 if successful
@@ -638,6 +739,182 @@
     
     
 }// end responseForLoginParticipantReceived
+
+
+-(void) responseForUpdateProfileReceived:(NSData*)responseData withError:(NSError*)error
+{
+    int responseType = 0;
+    
+    if(error == NULL) //everything ok
+    {
+        // the data sent back to us is a dictionary with two keys: Message and UseKey
+        NSError* jsonError;
+        NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+        NSLog(@"Response Dictionary for update profile is: %@\n", responseDictionary); // for testing
+        
+        int responseMessage = [[responseDictionary objectForKey:(@"Message")]intValue];
+                
+        
+        //NSLog(@"responseMessage is: %d\n", responseMessage);        // for testing
+        //NSLog(@"userKey         is: %d\n", userKey);                // for testing
+        //NSLog(@"userName        is: %d\n", userName);               // for testing
+        
+        // notes:
+        //   message values:
+        //  1000:  success:  participant successfully logged in
+        //  1001:  failure:  invalid email format
+        //  1005:  failure:  login failure
+        //  9999:  failure:  general failure
+        //   userkey values:
+        //  100001:   some user key starting with 100001 if successful
+        //  0:        0 upon failure
+        
+        
+        if (responseMessage == 1000)//successful register
+        {
+            //something here
+        }
+        
+        responseType = responseMessage;
+        
+    }
+    else // error not null
+    {
+        responseType = 9999; // just set to general server error
+    }
+    
+    // inform the ProfileViewController that server has replied back
+    [[self updateProfileResponseReceivedDelegate] UpdateProfileResponseReceived:responseType];
+    
+    
+}// end responseForUpdateProfileReceived
+
+-(void) responseForGetProfileReceived:(NSData*)responseData withError:(NSError*)error
+{
+    
+    /*  how to encode decode an image into base64 string
+     // This will load NeonSpark image &amp; *data* variable is holding data of image
+     NSData *data = [NSData dataWithContentsOfFile:
+     [[NSBundle mainBundle] pathForResource:@"Neon Spark" ofType:@"png"]
+     ];
+     // using base64StringFromData method, we are able to convert data to string
+     NSString *str = [NSString base64StringFromData:data length:[data length]];
+     
+     // log the base64 encoded string
+     NSLog(@"Base64 Encoded string is %@",str);
+     
+     // using base64DataFromString
+     NSData *dataFromBase64=[NSData base64DataFromString:str];
+     
+     // log the decoded NSData length
+     NSLog(@"Data length is %i",[dataFromBase64 length]);*/
+
+    int responseType = 0;
+    NSMutableDictionary* receivedDataDictionary;
+    
+    if(error == NULL) //everything ok
+    {
+        // the data sent back to us is a dictionary with two keys: Message and UseKey
+        NSError* jsonError;
+        NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+        NSLog(@"Response Dictionary for update profile is: %@\n", responseDictionary); // for testing
+        
+        int responseMessage = [[responseDictionary objectForKey:(@"Message")]intValue];
+        NSString* userEmail = [responseDictionary objectForKey:(@"UserEmail")];
+        NSString* userImage = [responseDictionary objectForKey:(@"UserImage")];
+        NSString* userPass  = [responseDictionary objectForKey:(@"Password")];
+        NSString* userName  = [responseDictionary objectForKey:(@"Username")];
+        int  teamKey        = [[responseDictionary objectForKey:(@"TeamKey")]intValue];
+        
+          
+        if (responseMessage == 1000)//successful register
+        {
+            //transfer the string image into a real image
+            NSData* dataFromString = [NSData base64DataFromString:userImage];
+            
+            //convert the Base64 back to an image
+            UIImage* newUserImage = [UIImage imageWithData:dataFromString];
+            
+            
+            //NSLog(@"PASSWORD, EMAIL, and DISPLAY NAME ALL GOOD\n"); // for testing
+            NSArray* objects = [NSArray arrayWithObjects:  newUserImage, nil];
+            NSArray* keys    = [NSArray arrayWithObjects:@"profileImage", nil];
+            receivedDataDictionary = [[NSMutableDictionary alloc]initWithObjects:objects forKeys:keys];
+            
+        }
+        
+        responseType = responseMessage;
+        
+    }
+    else // error not null
+    {
+        responseType = 9999; // just set to general server error
+    }
+    
+    // inform the ProfileViewController that server has replied back
+    [[self getProfileDataReceivedDelegate] GetProfileDataReceived:receivedDataDictionary];
+    
+    
+}// end responseForGetProfileReceived
+
+
+-(void) responseForForgotPasswordReceived:(NSData*)responseData withError:(NSError*)error
+{
+}//end response forgot password
+
+-(void) responseForGetAllTeamsReceived:(NSData*)responseData withError:(NSError*)error
+{
+}//end response get all teams
+
+-(void) responseForGetTeamsByTypeReceived:(NSData*)responseData withError:(NSError*)error
+{
+    
+    int responseType = 0;
+    
+    if(error == NULL) //everything ok
+    {
+        // the data sent back to us is a dictionary with two keys: Message and UseKey
+        NSError* jsonError;
+        NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+        
+        int responseMessage = [[responseDictionary objectForKey:(@"Message")]intValue];
+        NSObject* responseArray         = [responseDictionary objectForKey:(@"TeamList")];
+       
+        responseType = responseMessage;
+        
+    }
+    else // error not null
+    {
+        responseType = 9999; // just set to general server error
+    }
+    
+    // inform the CreateUserViewController that server has replied back
+    [[self responseForRequestNewTeamReceivedDelegate] responseDataForRequestNewTeamReceived:responseType];
+}//end response get teams by type
+
+-(void) responseForRequestNewTeamReceived:(NSData*)responseData withError:(NSError*)error
+{
+    int responseType = 0;
+    
+    if(error == NULL) //everything ok
+    {
+        // the data sent back to us is a dictionary with two keys: Message and UseKey
+        NSError* jsonError;
+        NSDictionary* responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&jsonError];
+        
+        int responseMessage = [[responseDictionary objectForKey:(@"Message")]intValue];        
+        responseType = responseMessage;
+        
+    }
+    else // error not null
+    {
+        responseType = 9999; // just set to general server error
+    }
+    
+    // inform the CreateUserViewController that server has replied back
+    [[self responseForRequestNewTeamReceivedDelegate] responseDataForRequestNewTeamReceived:responseType];
+    
+}//end request new team
 
 
 
@@ -785,6 +1062,18 @@
 - (NSString*) getUserName
 {
     return _userDisplayName;
+}
+
+- (UIImage*) getProfileImage
+{
+    
+    return _userProfileImage;
+    
+}
+
+- (int) getUserKey
+{
+    return _userServerKey;
 }
 
 
